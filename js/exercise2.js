@@ -37,7 +37,7 @@ var fullName = people.map(getFirstAndLastNames)
 console.log(fullName)
 
 // Use map() to create a new array of objects that only contain fullName and age properties. The fullName property should be set to the concatenation of the firstName and lastName properties. EG: [{fullName: "Finka Takenaka", age: 57}, {fullName: "Tiriaq Fenstermacher", age: 46}, ...]
-
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 function getNameAndAge (obj) {
   return {fullName: obj.firstName + ' ' + obj.lastName,
     age: obj.age}
@@ -46,7 +46,7 @@ var nameAndAge = people.map(getNameAndAge)
 console.log(nameAndAge)
 
 // Use filter() to get an array of all people younger than 50.
-
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 function ageLessThanFifty (obj) {
   if (obj.age < 50) {
     return obj
@@ -54,3 +54,13 @@ function ageLessThanFifty (obj) {
 }
 var nameAndAgeLessThan50 = people.filter(ageLessThanFifty)
 console.log(nameAndAgeLessThan50)
+
+// Use reduce() to find the oldest person.
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+function oldestPerson (current, obj) {
+  if (current > obj.age) {
+    return current
+  } return obj.age
+}
+var superOldPerson = people.reduce(oldestPerson)
+console.log(superOldPerson)
