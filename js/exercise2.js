@@ -44,3 +44,13 @@ function getNameAndAge (obj) {
 }
 var nameAndAge = people.map(getNameAndAge)
 console.log(nameAndAge)
+
+// Use filter() to get an array of all people younger than 50.
+
+function ageLessThanFifty (obj) {
+  if (obj.age < 50) {
+    return obj
+  }
+}
+var nameAndAgeLessThan50 = people.filter(ageLessThanFifty)
+console.log(nameAndAgeLessThan50)
